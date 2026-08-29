@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "chatwindows",
+  "version": "${version}",
+  "name": "Chat Windows",
+  "description": "Multiple movable, resizable chat windows with per-tab filtering and keyword highlighting.",
+  "authors": ["you"],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["dev.chatwindows.ChatWindowsClient"]
+  },
+  "mixins": [
+    { "config": "chatwindows.mixins.json", "environment": "client" }
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
