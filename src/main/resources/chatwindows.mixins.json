@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "dev.chatwindows.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "InGameHudMixin",
+    "ChatScreenMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
