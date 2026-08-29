@@ -53,10 +53,10 @@ public final class ChatWindowRenderer {
 
         List<ChatTab.VisualLine> all = tab.lines;
         int perPage = visibleLineCount(window);
-        int maxScroll = Math.max(0, all.size() - perPage);
-        tab.scroll = MathHelper.clamp(tab.scroll, 0, maxScroll);
+        int max = Math.max(0, all.size() - perPage);
+        tab. = MathHelper.clamp(tab., 0, max);
 
-        int end = all.size() - tab.scroll;
+        int end = all.size() - tab.;
         int start = Math.max(0, end - perPage);
         int count = end - start;
         int y = window.height - PADDING - count * window.lineSpacing;
@@ -123,7 +123,7 @@ public final class ChatWindowRenderer {
                         ColorUtil.argb(opacity, 0xFFFFFF), window.textShadow);
             }
 
-            renderScrollbar(context, window, tab, bright);
+            renderbar(context, window, tab, bright);
         }
 
         context.getMatrices().popMatrix();
@@ -158,7 +158,8 @@ public final class ChatWindowRenderer {
         return textRenderer.getWidth(tab.name) + 10;
     }
 
-    private static void renderScrollbar(DrawContext context, ChatWindow window, ChatTab tab, boolean bright) {
+    private static void renderbar(DrawContext context, ChatWindow window, ChatTab tab, boolean bright) {
+        if (!bright) return; // only show the scrollbar while the chat box is open
         int perPage = visibleLineCount(window);
         int total = tab.lines.size();
         if (total <= perPage) return;
